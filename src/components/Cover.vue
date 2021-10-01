@@ -20,19 +20,23 @@ export default {
 @import '../assets/style/variables';
 .card{
     background-color:$secondaryColor ;
-    height: 230px;
+    height: 250px;
     width:150px;
     
     img{
-        height: 110px;
-        width: 110px;
+        height: 115px;
+        width: 115px;
         margin-top:15px;
     }
     h3{
         color:white;
         text-transform: uppercase;
         font-size: 15px;
-        padding:10px;
+        padding:10px 15px;
+    }
+    div{
+        color:grey;
+        font-size:14px;
     }
 }
 </style>
