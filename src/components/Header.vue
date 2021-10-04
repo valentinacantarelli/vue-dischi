@@ -1,15 +1,24 @@
 <template>
     <header>
-        <div>
-            <img src="../assets/images/spotify-logo.png" alt="logo spotify">
-        </div>
-
+        <img src="../assets/images/spotify-logo.png" alt="logo spotify">
+        <select name="" id="" @change="$emit('change',option)">
+            <option value="">Seleziona Genere</option>
+            <option value="Rock">Rock</option>
+            <option value="Pop">Pop</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Metal">Metal</option>
+        </select>
     </header>
 </template>
 
 <script>
 export default {
-    name:"Header"
+    name:"Header",
+    data(){
+        return{
+            genreSelected:"",
+        }
+    }
 }
 </script>
 
@@ -19,10 +28,20 @@ header{
     background-color: $secondaryColor;
     height:55px ;
     width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
 
     img{
         height: 45px;
         margin: 5px 10px;
+    }
+    select{
+        margin:12px 15px;
+        border-radius: 5px;
+    }
+    select:focus{
+        outline: none;
     }
 
 }
