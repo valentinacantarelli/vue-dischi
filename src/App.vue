@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header @change="chooseGenre" />
     <main>
-      <Albums/>
+      <Albums :infoGenre="option"/>
       
     </main>
   </div>
@@ -17,7 +17,18 @@ export default {
   components: {
     Header,
     Albums
-  }
+  },
+  data(){
+    return{
+      option:"",
+    }
+  },
+  methods:{
+    chooseGenre(txt){
+      this.option=txt;
+    }
+  },
+  
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
     <div class="album-container">
-        <div class="row" v-for="(elm,index) in album" :key="index">
+        <div class="row" v-for="(elm,index) in filteredList" :key="index">
             <Cover :copertina="elm"/>
         </div>
     </div>
@@ -12,6 +12,7 @@ import axios from 'axios';
 
 export default {
     name:"Albums",
+    props:["infoGenre"],
     components:{
         Cover
     },
@@ -19,6 +20,13 @@ export default {
         return{
             album:[]
         }
+    },
+    computed:{
+        filteredList(){
+            return this.album.filter((value)=>{
+                return value.genre.toLowerCase().includes(this.infoGenre.toLowerCase());
+            }
+            )}
     },
     created() {
 		axios.get("https://flynn.boolean.careers/exercises/api/array/music")
