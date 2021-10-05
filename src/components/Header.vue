@@ -1,7 +1,7 @@
 <template>
     <header>
         <img src="../assets/images/spotify-logo.png" alt="logo spotify">
-        <select name="" id="" @change="$emit('change',option)" :v-model="option">
+        <select name="" id="" @change="$emit('change',option)" v-model="option">
             <option value="">Seleziona Genere</option>
             <option value="Rock">Rock</option>
             <option value="Pop">Pop</option>
